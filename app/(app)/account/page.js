@@ -7,7 +7,7 @@ import connectToDatabase from '@/app/connect';
 import PageSettingForm from '@/app/components/forms/PageSettingForm';
 import PageButtonsForm from '@/app/components/forms/PageButtonsForm';
 import PageLinksForm from '@/app/components/forms/PageLinksForm';
-import cloneDeep from clone-deep
+import cloneDeep from 'clone-deep'
 
 const PageComponent = async ({ searchParams }) => {
     // Connect to the database
