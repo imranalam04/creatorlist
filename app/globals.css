@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+.radio-togglers {
+  @apply p-1 bg-gray-200 inline-flex;
+}
+
+.radio-togglers span {
+  @apply bg-gray-200 p-2 px-4 shadow text-gray-700 block;
+}
+
+.radio-togglers input[type="radio"] {
+  @apply hidden;
+}
+
+.radio-togglers input[type="radio"]:checked + span {
+  @apply bg-blue-500 text-white;
+}
+
+input[type="text"],
+textarea {
+  @apply bg-gray-200 w-full block py-2 px-4 mb-2;
+}
+
+
+label.input-label {
+  @apply uppercase text-gray-600 font-semibold text-xs mb-2;
+}
+
+.sortable-ghost {
+  opacity: 0.3;
+}
+
+.form-wrapper input[type="text"],
+.form-wrapper textarea {
+  @apply bg-gray-200 w-full block py-2 px-4 mb-2;
+}
+
