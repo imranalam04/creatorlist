@@ -2,7 +2,7 @@ import { Page } from '../../models/Page';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
-import UsernameForm from '../../components/forms/usernameForm';
+import UsernameForm from '../../components/forms/UsernameForm';
 import connectToDatabase from '@/app/connect';
 import PageSettingForm from '@/app/components/forms/PageSettingForm';
 import PageButtonsForm from '@/app/components/forms/PageButtonsForm';
