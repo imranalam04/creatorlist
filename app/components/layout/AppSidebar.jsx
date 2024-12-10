@@ -14,7 +14,7 @@ const AppSidebar = () => {
   ]
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-screen">
       <nav className="space-y-1 flex-1">
         {navItems.map((item) => {
           const isActive = path === item.href
