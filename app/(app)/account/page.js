@@ -7,7 +7,7 @@ import connectToDatabase from '@/app/connect';
 import PageSettingForm from '@/app/components/forms/PageSettingForm';
 import PageButtonsForm from '@/app/components/forms/PageButtonsForm';
 import PageLinksForm from '@/app/components/forms/PageLinksForm';
-import cloneDeep from 'clone-deep'
+import cloneDeep from 'clone-deep';
 
 const PageComponent = async ({ searchParams }) => {
     // Connect to the database
@@ -27,10 +27,11 @@ const PageComponent = async ({ searchParams }) => {
     // Check if the user has an existing page
     const page = await Page.findOne({ owner: session?.user?.email });
 
-    const leanPage = cloneDeep(page.toJSON());
-    leanPage._id = leanPage._id.toString()
-
     if (page) {
+        // Safely handle page and convert to a plain object
+        const leanPage = cloneDeep(page.toJSON());
+        leanPage._id = leanPage._id.toString();
+
         return (
             <div>
                 <PageSettingForm page={leanPage} user={session.user} />
@@ -40,6 +41,7 @@ const PageComponent = async ({ searchParams }) => {
         );
     }
 
+    // If no page exists, show the UsernameForm
     return (
         <div>
             <UsernameForm desiredUsername={desiredUsername} />
