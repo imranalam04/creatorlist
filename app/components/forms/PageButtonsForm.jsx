@@ -67,7 +67,7 @@ const PageButtonsForm = ({ user, page }) => {
                                         {upperFirst(b.label)}:
                                     </span>
                                 </div>
-                                <input defaultValue={page.buttons[b.key]} name={b.key} placeholder={b.placeholder} type='text' style={{ marginBottom: 0 }} />
+                                <input defaultValue={page.buttons?.[b.key] || ""} name={b.key} placeholder={b.placeholder} type='text' style={{ marginBottom: 0 }} />
                                 <button onClick={() => removeButton(b)} type='button' className='py-2 px-4 border-2 bg-gray-300 cursor-pointer'>
                                     <FaTrash size={20} className='mx-1 text-red-500' />
                                 </button>
